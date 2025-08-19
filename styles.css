@@ -1,0 +1,370 @@
+.y2k-theme {
+    background: linear-gradient(135deg, #fff, #ffcccc);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    max-height: 100vh;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+    background: #fff;
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 16px 0 0 16px;
+    overflow-y: auto;
+}
+
+.left-panel h1 {
+    font-size: 24px;
+    color: #ff0000;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+.left-panel h2 {
+    font-size: 18px;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.left-panel h3 {
+    font-size: 16px;
+    color: #ff0000;
+    margin: 10px 0 5px;
+}
+
+.global-settings {
+    margin-bottom: 20px;
+}
+
+.param-field {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.param-label {
+    font-weight: bold;
+    color: #ff0000;
+    width: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.param-label .icon {
+    margin-right: 5px;
+}
+
+.left-panel .small-input {
+    width: 70px;
+    margin-right: 5px;
+    padding: 5px;
+    font-size: 14px;
+    color: #000000;
+    background: #ffffff;
+    border: 2px solid #ff0000;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.left-panel .small-input:hover, .left-panel .small-input:focus {
+    background: #ffeeee;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.action-button {
+    padding: 10px 5px;
+    font-size: 16px;
+    color: #ff0000;
+    background: #fff;
+    border: 2px solid #ff0000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.action-button .icon {
+    margin-right: 5px;
+}
+
+.action-button:hover {
+    color: #fff;
+    background: #ff0000;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+.config-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.config-button {
+    flex: 1;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.clear-all-button, .export-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.language-switch {
+    margin-bottom: 20px;
+}
+
+.language-switch select {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ff0000;
+    border-radius: 4px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.logo-link {
+    display: block;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.social-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #ff0000;
+    background: #fff;
+    border: 2px solid #ff0000;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    color: #fff;
+    background: #ff0000;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: black;
+    color: white;
+    border-radius: 0 16px 16px 0;
+    max-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block {
+    margin: 20px auto;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    position: relative;
+    min-height: 50px;
+    width: 80%;
+    text-align: center;
+}
+
+.delete-button {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text, .title-text, .final-text, .cast-text {
+    text-shadow: 2px 2px 4px #333;
+    text-align: center;
+}
+
+.header-text {
+    font-size: 2em;
+    color: red;
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
+.title-text {
+    font-size: 1.5em;
+    color: yellow;
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
+.final-text {
+    font-size: 1.2em;
+    color: white;
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
+.cast-text {
+    font-size: 1em;
+    color: white;
+    background: transparent;
+    border: none;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    text-align: center;
+}
+
+.wait-block {
+    color: gray;
+    font-style: italic;
+}
+
+.inline-input {
+    background: transparent;
+    border: 1px solid gray;
+    color: white;
+    width: 60px;
+}
+
+.image-placeholder {
+    width: 100px;
+    height: 100px;
+    background: gray;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.image-placeholder input {
+    width: 80%;
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.image-params {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.param-icon {
+    font-size: 14px;
+    color: white;
+}
+
+.small-input {
+    width: 60px;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.add-buttons {
+    position: sticky;
+    bottom: 0;
+    background: black;
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    z-index: 10;
+    width: 100%;
+}
+
+.circle-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-button-label {
+    font-size: 12px;
+    color: white;
+    margin-top: 5px;
+}
+
+.sortable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+    }
+    .left-panel {
+        width: 100%;
+        padding: 10px;
+    }
+    .right-panel {
+        padding: 10px;
+        max-height: none;
+    }
+    .add-buttons {
+        flex-wrap: wrap;
+    }
+}
