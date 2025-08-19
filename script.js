@@ -457,7 +457,7 @@ function generateCleanup() {
 \t\t\tローカル変数\tcurrent_line_id
 \t\t\t整数\t0
 \t\t\t整数\t1
-\t\t\t整数\t1
+\t\t\t整数\t2
 \t\tコマンド終了
 \t\tコマンド\tENDIF
 \t\tコマンド終了
