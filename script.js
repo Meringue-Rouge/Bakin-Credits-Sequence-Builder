@@ -262,6 +262,7 @@ function loadPreset() {
     if (!name) return;
     const preset = JSON.parse(localStorage.getItem('credits_preset_' + name));
     if (!preset) return;
+    document.getElementById('preset_name').value = name; // Set preset name in text field
     setGlobals(preset.globals);
     blocks = JSON.parse(JSON.stringify(preset.blocks || []));
     renderBlocks();
@@ -273,6 +274,7 @@ function deletePreset() {
     if (!name) return;
     if (confirm(`Are you sure you want to delete the preset "${name}"?`)) {
         localStorage.removeItem('credits_preset_' + name);
+        document.getElementById('preset_name').value = ''; // Clear preset name field
         updatePresetList();
     }
 }
