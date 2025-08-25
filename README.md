@@ -4,6 +4,7 @@ Generate a credit sequence event for RPG Developer Bakin using this easy website
 ## Guide
 ### Adding Objects
 <img width="391" height="85" alt="image" src="https://github.com/user-attachments/assets/9dbdc8ee-431e-4b11-af14-093f1110e776" />
+
 Click on one of the circles to add a new object for the credits.
 - Header: Large text header, good for headers and company names, like Meringue Entertainment.
 - Title: Medium text header, good for job titles like QA Testers or Battle Programmers.
