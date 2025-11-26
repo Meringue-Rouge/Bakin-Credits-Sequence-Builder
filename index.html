@@ -24,63 +24,58 @@
             <h2 id="presets-title">Presets</h2>
             <input type="text" id="preset_name" placeholder="Preset Name">
             <div class="config-buttons">
-                <button class="action-button config-button" onclick="savePreset()">Save</button>
-                <button class="action-button config-button" onclick="loadPreset()">Load</button>
-                <button class="action-button config-button" onclick="deletePreset()">Delete</button>
+                <button class="action-button config-button" onclick="savePreset()"><span class="icon">💾</span> <span id="save-label">Save</span></button>
+                <button class="action-button config-button" onclick="loadPreset()"><span class="icon">📂</span> <span id="load-label">Load</span></button>
+                <button class="action-button config-button" onclick="deletePreset()"><span class="icon">🗑️</span> <span id="delete-preset-label">Delete</span></button>
             </div>
             <select id="preset_list"></select>
             <button class="action-button export-button" onclick="exportEvent()"><span class="icon">📤</span> <span id="export-label">Export Event</span></button>
-
-
             <h2 id="global-settings-title">Global Settings</h2>
             <div class="global-settings">
                 <h3 id="starting-positions-title">Starting Positions</h3>
                 <div class="param-field">
-                    <span class="param-label">Credits:</span>
+                    <span class="param-label"><span class="icon">📍</span> <span id="credits-label">Credits:</span></span>
                     <input type="number" class="small-input" id="credits_x" value="980">
                     <input type="number" class="small-input" id="credits_y" value="1086">
                 </div>
                 <div class="param-field">
-                    <span class="param-label">Image:</span>
+                    <span class="param-label"><span class="icon">📍</span> <span id="image-label">Image:</span></span>
                     <input type="number" class="small-input" id="image_x" value="480">
                     <input type="number" class="small-input" id="image_y" value="1086">
                 </div>
-
                 <h3 id="end-positions-title">End Positions (Y)</h3>
                 <div class="param-field">
-                    <span class="param-label">Line:</span>
+                    <span class="param-label"><span class="icon">🏁</span> <span id="line-label">Line:</span></span>
                     <input type="number" class="small-input" id="end_of_line_y" value="-100">
                 </div>
                 <div class="param-field">
-                    <span class="param-label">Image Line:</span>
+                    <span class="param-label"><span class="icon">🏁</span> <span id="image-line-label">Image Line:</span></span>
                     <input type="number" class="small-input" id="end_of_image_line_y" value="-600">
                 </div>
                 <div class="param-field">
-                    <span class="param-label">Final Line:</span>
+                    <span class="param-label"><span class="icon">🏁</span> <span id="final-line-label">Final Line:</span></span>
                     <input type="number" class="small-input" id="final_end_of_line_y" value="500">
                 </div>
-
                 <h3 id="speeds-title">Speeds</h3>
                 <div class="param-field">
-                    <span class="param-label">Scroll:</span>
+                    <span class="param-label"><span class="icon">⚡</span> <span id="scroll-label">Scroll:</span></span>
                     <input type="number" step="0.1" class="small-input" id="scroll_speed" value="3">
                 </div>
                 <div class="param-field">
-                    <span class="param-label">Image Scroll:</span>
+                    <span class="param-label"><span class="icon">⚡</span> <span id="image-scroll-label">Image Scroll:</span></span>
                     <input type="number" step="0.1" class="small-input" id="image_scroll_speed" value="2.9">
                 </div>
                 <div class="param-field">
-                    <span class="param-label">Final Scroll:</span>
+                    <span class="param-label"><span class="icon">⚡</span> <span id="final-scroll-label">Final Scroll:</span></span>
                     <input type="number" step="0.1" class="small-input" id="final_line_scroll_speed" value="1.5">
                 </div>
-
                 <h3 id="other-title">Other</h3>
                 <div class="param-field">
-                    <span class="param-label">Starting Line ID:</span>
+                    <span class="param-label"><span class="icon">🔢</span> <span id="starting-line-id-label">Starting Line ID:</span></span>
                     <input type="number" class="small-input" id="starting_line_id" value="32">
                 </div>
                 <div class="param-field">
-                    <span class="param-label">Text Align:</span>
+                    <span class="param-label"><span class="icon">↔️</span> <span id="text-align-label">Text Align:</span></span>
                     <select id="text_align" class="small-input">
                         <option value="0">Left</option>
                         <option value="1" selected>Center</option>
@@ -88,10 +83,8 @@
                     </select>
                 </div>
             </div>
-
-            <button class="action-button clear-all-button" onclick="clearAll()">Clear All</button>
+            <button class="action-button clear-all-button" onclick="clearAll()"><span class="icon">🧹</span> <span id="clear-all-label">Clear All</span></button>
         </div>
-
         <div class="right-panel">
             <div id="block-list" class="sortable"></div>
             <div class="add-buttons">
@@ -124,5 +117,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>

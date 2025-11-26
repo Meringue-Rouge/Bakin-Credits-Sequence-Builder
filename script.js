@@ -11,33 +11,72 @@ const blockDefaults = {
 
 const translations = {
     en: {
-        'presets-title': 'Presets', 'save-label': 'Save', 'load-label': 'Load', 'delete-preset-label': 'Delete',
-        'export-label': 'Export Event', 'global-settings-title': 'Global Settings',
-        'starting-positions-title': 'Starting Positions (XY)', 'credits-label': 'Credits:', 'image-label': 'Image:',
-        'end-positions-title': 'End Positions (Y)', 'line-label': 'Line:', 'image-line-label': 'Image Line:', 'final-line-label': 'Final Line:',
-        'speeds-title': 'Speeds', 'scroll-label': 'Scroll:', 'image-scroll-label': 'Image Scroll:', 'final-scroll-label': 'Final Scroll:',
-        'other-title': 'Other', 'starting-line-id-label': 'Starting Line ID:', 'text-align-label': 'Text Align:',
+        'presets-title': 'Presets',
+        'save-label': 'Save',
+        'load-label': 'Load',
+        'delete-preset-label': 'Delete',
+        'export-label': 'Export Event',
+        'global-settings-title': 'Global Settings',
+        'starting-positions-title': 'Starting Positions',
+        'credits-label': 'Credits:',
+        'image-label': 'Image:',
+        'end-positions-title': 'End Positions (Y)',
+        'line-label': 'Line:',
+        'image-line-label': 'Image Line:',
+        'final-line-label': 'Final Line:',
+        'speeds-title': 'Speeds',
+        'scroll-label': 'Scroll:',
+        'image-scroll-label': 'Image Scroll:',
+        'final-scroll-label': 'Final Scroll:',
+        'other-title': 'Other',
+        'starting-line-id-label': 'Starting Line ID:',
+        'text-align-label': 'Text Align:',
         'clear-all-label': 'Clear All',
-        'header-button-label': 'Header', 'title-button-label': 'Title', 'cast-button-label': 'Cast',
-        'image-button-label': 'Image', 'wait-button-label': 'Wait', 'final-button-label': 'Final'
+        'header-button-label': 'Header',
+        'title-button-label': 'Title',
+        'cast-button-label': 'Cast',
+        'image-button-label': 'Image',
+        'wait-button-label': 'Wait',
+        'final-button-label': 'Final'
     },
     ja: {
-        'presets-title': 'プリセット', 'save-label': '保存', 'load-label': '読み込む', 'delete-preset-label': '削除',
-        'export-label': 'イベントをエクスポート', 'global-settings-title': 'グローバル設定',
-        'starting-positions-title': '開始位置（XY）', 'credits-label': 'クレジット：', 'image-label': '画像：',
-        'end-positions-title': '終了位置（Y）', 'line-label': 'ライン：', 'image-line-label': '画像ライン：', 'final-line-label': '最終ライン：',
-        'speeds-title': '速度', 'scroll-label': 'スクロール：', 'image-scroll-label': '画像スクロール：', 'final-scroll-label': '最終スクロール：',
-        'other-title': 'その他', 'starting-line-id-label': '開始ラインID：', 'text-align-label': 'テキスト配置：',
+        'presets-title': 'プリセット',
+        'save-label': '保存',
+        'load-label': '読み込む',
+        'delete-preset-label': '削除',
+        'export-label': 'イベントをエクスポート',
+        'global-settings-title': 'グローバル設定',
+        'starting-positions-title': '開始位置',
+        'credits-label': 'クレジット：',
+        'image-label': '画像：',
+        'end-positions-title': '終了位置 (Y)',
+        'line-label': 'ライン：',
+        'image-line-label': '画像ライン：',
+        'final-line-label': '最終ライン：',
+        'speeds-title': '速度',
+        'scroll-label': 'スクロール：',
+        'image-scroll-label': '画像スクロール：',
+        'final-scroll-label': '最終スクロール：',
+        'other-title': 'その他',
+        'starting-line-id-label': '開始ラインID：',
+        'text-align-label': 'テキスト配置：',
         'clear-all-label': 'すべてクリア',
-        'header-button-label': 'ヘッダー', 'title-button-label': 'タイトル', 'cast-button-label': 'キャスト',
-        'image-button-label': '画像', 'wait-button-label': '待機', 'final-button-label': '最終'
+        'header-button-label': 'ヘッダー',
+        'title-button-label': 'タイトル',
+        'cast-button-label': 'キャスト',
+        'image-button-label': '画像',
+        'wait-button-label': '待機',
+        'final-button-label': '最終'
     }
 };
 
 function updateLanguage() {
     const lang = document.getElementById('language').value;
     Object.keys(translations[lang]).forEach(id => {
-        document.getElementById(id).textContent = translations[lang][id];
+        const el = document.getElementById(id);
+        if (el) {
+            el.textContent = translations[lang][id];
+        }
     });
     document.querySelector('html').lang = lang;
 }
@@ -198,10 +237,10 @@ function attachListeners(block, index) {
         case 'image':
             document.getElementById(`block-guid-${index}`).addEventListener('input', (e) => block.data.guid = e.target.value);
             document.getElementById(`block-scale-${index}`).addEventListener('input', (e) => block.data.scale = parseInt(e.target.value) || 25);
-            document.getElementById(`block-x-${index}`).addEventListener('input', (e) => block.data.x = e.target.value ? parseInt(e.target.value) : null);
-            document.getElementById(`block-y-${index}`).addEventListener('input', (e) => block.data.y = e.target.value ? parseInt(e.target.value) : null);
-            document.getElementById(`block-end_y-${index}`).addEventListener('input', (e) => block.data.end_y = e.target.value ? parseInt(e.target.value) : null);
-            document.getElementById(`block-speed-${index}`).addEventListener('input', (e) => block.data.speed = e.target.value ? parseFloat(e.target.value) : null);
+            document.getElementById(`block-x-${index}`).addEventListener('input', (e) => block.data.x = parseInt(e.target.value) || null);
+            document.getElementById(`block-y-${index}`).addEventListener('input', (e) => block.data.y = parseInt(e.target.value) || null);
+            document.getElementById(`block-end_y-${index}`).addEventListener('input', (e) => block.data.end_y = parseInt(e.target.value) || null);
+            document.getElementById(`block-speed-${index}`).addEventListener('input', (e) => block.data.speed = parseFloat(e.target.value) || null);
             break;
         case 'wait':
             document.getElementById(`block-time-${index}`).addEventListener('input', (e) => block.data.time = parseFloat(e.target.value) || 1.0);
@@ -214,11 +253,19 @@ function deleteBlock(index) {
     renderBlocks();
 }
 
+function clearAll() {
+    blocks = [];
+    renderBlocks();
+}
+
 function savePreset() {
-    const name = document.getElementById('preset_name').value;
-    if (!name) return;
-    const preset = {globals: getGlobals(), blocks: JSON.parse(JSON.stringify(blocks))};
-    localStorage.setItem('credits_preset_' + name, JSON.stringify(preset));
+    const name = document.getElementById('preset_name').value.trim();
+    if (!name) return alert('Enter a preset name');
+    const preset = {
+        blocks: JSON.parse(JSON.stringify(blocks)),
+        globals: getGlobals()
+    };
+    localStorage.setItem(`preset_${name}`, JSON.stringify(preset));
     updatePresetList();
 }
 
@@ -226,30 +273,20 @@ function loadPreset() {
     const select = document.getElementById('preset_list');
     const name = select.value;
     if (!name) return;
-    const preset = JSON.parse(localStorage.getItem('credits_preset_' + name));
-    if (!preset) return;
-    document.getElementById('preset_name').value = name; // Set preset name in text field
-    setGlobals(preset.globals);
-    blocks = JSON.parse(JSON.stringify(preset.blocks || []));
-    renderBlocks();
+    const preset = JSON.parse(localStorage.getItem(`preset_${name}`));
+    if (preset) {
+        blocks = JSON.parse(JSON.stringify(preset.blocks));
+        setGlobals(preset.globals);
+        renderBlocks();
+    }
 }
 
 function deletePreset() {
     const select = document.getElementById('preset_list');
     const name = select.value;
     if (!name) return;
-    if (confirm(`Are you sure you want to delete the preset "${name}"?`)) {
-        localStorage.removeItem('credits_preset_' + name);
-        document.getElementById('preset_name').value = ''; // Clear preset name field
-        updatePresetList();
-    }
-}
-
-function clearAll() {
-    if (confirm('Are you sure you want to clear all credits blocks?')) {
-        blocks = [];
-        renderBlocks();
-    }
+    localStorage.removeItem(`preset_${name}`);
+    updatePresetList();
 }
 
 function updatePresetList() {
@@ -257,10 +294,10 @@ function updatePresetList() {
     select.innerHTML = '';
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
-        if (key.startsWith('credits_preset_')) {
+        if (key.startsWith('preset_')) {
             const option = document.createElement('option');
-            option.value = key.slice(15);
-            option.text = option.value;
+            option.value = key.slice(7);
+            option.textContent = key.slice(7);
             select.appendChild(option);
         }
     }
@@ -279,7 +316,7 @@ function getGlobals() {
         image_scroll_speed: parseFloat(document.getElementById('image_scroll_speed').value) || 2.9,
         final_line_scroll_speed: parseFloat(document.getElementById('final_line_scroll_speed').value) || 1.5,
         starting_line_id: parseInt(document.getElementById('starting_line_id').value) || 32,
-        text_align: parseInt(document.getElementById('text_align').value) || 1   // ← New global setting
+        text_align: parseInt(document.getElementById('text_align').value) || 1
     };
 }
 
@@ -295,7 +332,7 @@ function setGlobals(g) {
     document.getElementById('image_scroll_speed').value = g.image_scroll_speed;
     document.getElementById('final_line_scroll_speed').value = g.final_line_scroll_speed;
     document.getElementById('starting_line_id').value = g.starting_line_id;
-    document.getElementById('text_align').value = g.text_align;   // ← Restore on preset load
+    document.getElementById('text_align').value = g.text_align || 1;
 }
 
 function exportEvent() {
@@ -463,18 +500,8 @@ function generateAddLineId() {
 }
 
 function generateSPText(text, style, g) {
-    // 8th parameter = text alignment (0 = Left, 1 = Center, 2 = Right)
-    return '\t\tコマンド\tSPTEXT\n' +
-           '\t\t\tローカル変数\tcurrent_line_id\n' +
-           '\t\t\t文字列\t' + text + '\n' +
-           '\t\t\tローカル変数\tcurrent_line_scale\n' +
-           '\t\t\t整数\t' + style.color + '\n' +
-           '\t\t\t整数\t1\n' +
-           '\t\t\tローカル変数\tcredits_x\n' +
-           '\t\t\tローカル変数\tcredits_y\n' +
-           '\t\t\t整数\t' + g.text_align + '\n' +   // ← Global alignment applied here
-           '\t\t\t整数\t' + style.param9 + '\n' +
-           '\t\tコマンド終了';
+    const align = g.text_align !== undefined ? g.text_align : 1;
+    return '\t\tコマンド\tSPTEXT\n\t\t\tローカル変数\tcurrent_line_id\n\t\t\t文字列\t' + text + '\n\t\t\tローカル変数\tcurrent_line_scale\n\t\t\t整数\t' + style.color + '\n\t\t\t整数\t1\n\t\t\tローカル変数\tcredits_x\n\t\t\tローカル変数\tcredits_y\n\t\t\t整数\t' + align + '\n\t\t\t整数\t' + style.param9 + '\n\t\tコマンド終了';
 }
 
 function generateSPMove(isFinal, g) {
@@ -498,10 +525,10 @@ function generateSPHIDE(isFinal) {
 
 const blockStyles = {
     header: {color: -2522751, param9: 1, preWait: 0.4, scale: 200},
-    title:  {color: -5742,    param9: 2, preWait: 0.4, scale: 130},
-    cast:   {color: -1,       param9: 2, preWait: 0.2, additionalWait: 0.1, scale: 100},
-    final:  {color: -1,       param9: 2, preWait: 1,   scale: 130},
-    image:  {preWait: 0.5}
+    title: {color: -5742, param9: 2, preWait: 0.4, scale: 130},
+    cast: {color: -1, param9: 2, preWait: 0.2, additionalWait: 0.1, scale: 100},
+    final: {color: -1, param9: 2, preWait: 1, scale: 130},
+    image: {preWait: 0.5}
 };
 
 document.getElementById('language').addEventListener('change', updateLanguage);
