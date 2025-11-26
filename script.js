@@ -362,7 +362,7 @@ function generateBlocks(blocks, g) {
                 cmds.push(generateWait(blockStyles[block.type].preWait));
                 cmds.push(generateAddLineId());
                 cmds.push(generateVariable('current_line_scale', blockStyles[block.type].scale));
-                cmds.push(generateSPText(block.data.text, blockStyles[block.type]));
+                cmds.push(generateSPText(block.data.text, blockStyles[block.type], g));
                 cmds.push(generateSPMove(block.type === 'final', g));
                 break;
             case 'cast':
@@ -371,7 +371,7 @@ function generateBlocks(blocks, g) {
                     if (idx === 0) cmds.push(generateWait(blockStyles.cast.preWait));
                     cmds.push(generateAddLineId());
                     cmds.push(generateVariable('current_line_scale', blockStyles.cast.scale));
-                    cmds.push(generateSPText(line, blockStyles.cast));
+                    cmds.push(generateSPText(line, blockStyles.cast, g));
                     cmds.push(generateSPMove(false, g));
                 });
                 break;
