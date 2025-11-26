@@ -29,7 +29,8 @@
                 <button class="action-button config-button" onclick="deletePreset()">Delete</button>
             </div>
             <select id="preset_list"></select>
-            <button class="action-button export-button" onclick="exportEvent()">Export Event</button>
+            <button class="action-button export-button" onclick="exportEvent()"><span class="icon">📤</span> <span id="export-label">Export Event</span></button>
+
 
             <h2 id="global-settings-title">Global Settings</h2>
             <div class="global-settings">
@@ -123,4 +124,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
